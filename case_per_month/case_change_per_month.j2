@@ -1,0 +1,46 @@
+<table>
+    <colgroup><col /><col /></colgroup>
+    <tbody>
+    <tr>
+        <th>ECSDESK编号</th>
+        <th>问题标题</th>
+        <th>组件</th>
+        <th>状态</th>
+        <th>指派者</th>
+        <th>报告者</th>
+        <th>EPIC_LINK</th>
+        <th>CSE环境信息</th>
+        <th>所属地级市</th>
+        <th>解决结果</th>
+        <th>ECSDESK创建时间</th>
+        <th>ECS编号</th>
+        <th>ECS创建时间</th>
+        <th>ECS解决时间</th>
+        <th>ECSDESK解决时间</th>
+        <th>ECSDESK解决时长（天）</th>
+        <th>ECS解决时长（天）</th>
+    </tr>
+    {% for item in data %}
+        <tr>
+        <td><a href="https://easystack.atlassian.net/browse/{{ item.ecsdesk_key }}">{{ item.ecsdesk_key }}</a></td>
+        <td>{{ item.summary }}</td>
+        <td>{{ item.components }}</td>
+        <td>{{ item.status  }}</td>
+        <td>{{ item.assignee  }}</td>
+        <td>{{ item.reporter }}</td>
+        <td>{{ item.epic_link }}</td>
+        <td><a href="https://easystack.atlassian.net/browse/{{ item.cse }}">{{ item.cse }}</a></td>
+        <td>{{ item.prefecture_level_city }}</td>
+        <td>{{ item.category }}</td>
+        <td>{{ item.created_time }}</td>
+        <td><a href="https://easystack.atlassian.net/browse/{{ item.ecs_key }}">{{ item.ecs_key }}</a></td>
+        <td>{{ item.ecs_create }}</td>
+        <td>{{ item.ecs_resolve }}</td>
+        <td>{{ item.resolve_time }}</td>
+        <td>{{ item.time }}</td>
+        <td>{{ item.ecs_time }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<p><br /></p>
